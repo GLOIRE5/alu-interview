@@ -11,15 +11,16 @@ def minOperations(n):
     if n < 2:
         return 0
 
-    h_num = 1
-    copy_num = 0
-    op_num = 0
-    while h_num < n:
-        if n % h_num == 0:
-            copy_num = h_num
-            op_num += 1
+    current_num_of_h = 1
+    copied = 0
+    num_of_operations = 0
 
-        h_num += copy_num
-        op_num += 1
-    return op_num
+    while current_num_of_h < n:
+        if n % current_num_of_h == 0:
+            copied = current_num_of_h
+            num_of_operations += 1
+
+        current_num_of_h += copied
+        num_of_operations += 1
+    return num_of_operations
 
